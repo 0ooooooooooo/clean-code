@@ -37,3 +37,15 @@ B.forEach((bitem) => {
 B = A.filter((aItem) => {
   return !B.some((bItem) => bItem.id === aItem.id);
 });
+
+// Delete item
+// Bad
+const index = this.tableData.findIndex((item) => [current].id === item.id);
+if (index > -1) {
+    this.tableData.splice(index, 1);
+}
+
+// Good
+this.tableData = this.tableData.filter((item) => {
+    return item.id !== [current].id;
+});
